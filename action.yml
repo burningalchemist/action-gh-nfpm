@@ -1,0 +1,42 @@
+name: 'nFPM - deb, rpm and apk packager'
+description: 'nFPM is a simple, 0-dependencies, deb, rpm and apk packager'
+branding:
+  icon: 'package'
+  color: 'purple'
+inputs:
+  config:
+    description: "YAML config filepath"
+    default: 'nfpm.yml'
+    required: false
+  target:
+    description: 'Package target. Can be a folder'
+    required: false
+    default: ''
+  packager:
+    description: 'Packager type: deb|rpm|apk'
+    required: true
+    default: ''
+  nfpm_version:
+    description: 'nFPM version'
+    required: false
+    default: '2.17.0'
+outputs:
+  package:
+    description: "Created package name"
+    value: ${{ steps.run-nfpm.outputs.package }}
+runs:
+  using: 'composite'
+  steps:
+  - run: |
+       echo "${{ github.action_path }}" >> $GITHUB_PATH
+       wget -qO- https://github.com/goreleaser/nfpm/releases/download/v${{inputs.nfpm_version}}/nfpm_${{inputs.nfpm_version}}_Linux_x86_64.tar.gz | tar --directory ${{ github.action_path }} -xz nfpm
+    shell: bash
+  - run: nfpm --version
+    shell: bash
+  - run: entrypoint.sh
+    id: run-nfpm
+    shell: bash
+    env:
+      INPUT_PACKAGER: ${{ inputs.packager }}
+      INPUT_CONFIG: ${{ inputs.config }}
+      INPUT_TARGET: ${{ inputs.target }}
