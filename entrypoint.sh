@@ -9,5 +9,5 @@ if [ "$INPUT_CONFIG" != "" ] && [ "$INPUT_PACKAGER" != "" ]; then
     if [ "$name" = "" ]; then
         exit 1
     fi
-   echo "::set-output name=package::$name"
+   echo "{package}={$name}" >> $GITHUB_OUTPUT
 fi
