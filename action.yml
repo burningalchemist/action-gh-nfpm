@@ -1,5 +1,5 @@
-name: 'nFPM - deb, rpm and apk packager'
-description: 'nFPM is a simple, 0-dependencies, deb, rpm and apk packager'
+name: 'nFPM - deb, rpm, apk and archlinux packager'
+description: 'nFPM is a simple, 0-dependencies, deb, rpm, apk and archlinux packager'
 branding:
   icon: 'package'
   color: 'purple'
@@ -13,7 +13,7 @@ inputs:
     required: false
     default: ''
   packager:
-    description: 'Packager type: deb|rpm|apk'
+    description: 'Packager type: deb|rpm|apk|archlinux'
     required: true
     default: ''
   nfpm_version:
