@@ -6,7 +6,7 @@
 
 ### `nfpm_version`
 
-**Optional** - nFPM version to use. Default is `2.17.0`
+**Optional** - nFPM version to use. Default is `2.22.2`
 
 ### `config`
 
@@ -14,7 +14,7 @@
 
 ### `packager`
 
-**Required** - Packager to use. `rpm`, `deb` or `apk`
+**Required** - Packager to use. `rpm`, `deb`, `apk` or `archlinux`
 
 ### `target`
 
