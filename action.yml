@@ -19,7 +19,7 @@ inputs:
   nfpm_version:
     description: 'nFPM version'
     required: false
-    default: 'v2.22.2'
+    default: '2.22.2'
 outputs:
   package:
     description: "Created package name"
