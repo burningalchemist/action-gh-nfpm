@@ -1,6 +1,6 @@
 # nFPM Packager action
 
-[nFPM](https://github.com/goreleaser/nfpm) is a simple, 0-dependencies, deb, rpm and apk packager.
+[nFPM](https://github.com/goreleaser/nfpm) is a simple, 0-dependencies, deb, rpm, apk and archlinux packager.
 
 ## Inputs
 
