@@ -24,13 +24,13 @@
 ```yaml
     - name: Create deb package
       id: nfpm-deb
-      uses: burningalchemist/nfpm-action@v1
+      uses: burningalchemist/action-gh-nfpm@v1
       with:
         packager: deb
         config: packaging/conf/nfpm.yaml
     - name: Create rpm package with a particular name
       id: nfpm-rpm
-      uses: burningalchemist/nfpm-action@v1
+      uses: burningalchemist/action-gh-nfpm@v1
       with:
         packager: rpm
         config: packaging/conf/nfpm.yaml
